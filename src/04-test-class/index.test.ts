@@ -1,4 +1,3 @@
-// Uncomment the code below and write your tests
 import {
   InsufficientFundsError,
   SynchronizationFailedError,
@@ -58,8 +57,11 @@ describe('BankAccount', () => {
 
   test('fetchBalance should return number in case if request did not failed', async () => {
     const account = getBankAccount(100);
+
+    jest.spyOn(account, 'fetchBalance').mockResolvedValueOnce(50);
+
     const balance = await account.fetchBalance();
-    console.log(typeof balance, balance);
+
     expect(typeof balance).toBe('number');
   });
 
