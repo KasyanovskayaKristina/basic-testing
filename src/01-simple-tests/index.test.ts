@@ -30,11 +30,11 @@ describe('simpleCalculator tests', () => {
     });
     expect(result).toBe(8);
   });
-  /*
-  test('should return null for invalid action', () => {
+
+  test('should return result for invalid action', () => {
     const result = simpleCalculator({ a: 5, b: 3, action: '+' });
-    expect(result).toBeNull();
-  });*/
+    expect(result).toBe(8);
+  });
 
   test('should return null for invalid arguments', () => {
     const result = simpleCalculator({ a: '5', b: 3, action: Action.Add });
